@@ -1,0 +1,104 @@
+<%- include("header") %>
+<body> 
+ <div class="Counter" id="Count"> 
+   <div class="Shower" id="Shower">
+   </div>
+ </div> 
+ <div class="Set alarm" id="alaram">
+  <p>Instant alarm</p>
+<input type="number" id="hour" max="23" min="0"></input><input type="number" id="minutes" max="59" min="0"></input>
+<button id="alarm-button">Set alarm</button>
+<button id="remove-button">Remove alarm</button>
+<audio id="ami">
+  <source src="/Ab.mp3" type="audio/mp3">
+</audio>
+<div id="time-remaining"></div>
+</div> 
+<form id="previous-alarms" method="post" action="/">
+  <p>Ctreate alarms</p>
+  <input type="number" id="h" name="h" placeholder="Enter the hour"></input>
+  <input type="number" id="k" name="k" placeholder="Enter the minute"></input>
+  <button  type="submit" id="Storer">Submit</button>
+<div id="ToStore">
+  <ul>
+  <li>
+   <% if (ni !== null) { %>
+      <% ni.forEach(function(value){ %>
+        <%= value %>
+      <% }); %>
+      <% } %>
+      </li>
+    </ul>
+    <ul>
+      <li> 
+    <% if (nh !== null) { %>
+      <% nh.forEach(function(value){ %>
+      <%= value %>
+      <% }); %>
+    <% } %>
+      </li>
+      </ul>
+</div>
+</form>
+</body>
+<script> 
+   var Count =document.getElementById("Count") 
+  var  Shower=document.getElementById("Shower")
+   var add=document.getElementById("alarm-button")
+   var remove=document.getElementById("remove-button")
+   var hour=document.getElementById("hour")
+   var min=document.getElementById("minutes")
+   var time=document.getElementById("time-remaining")
+   var prev=document.getElementById("previous-alarms")
+   var audio=document.getElementById("ami");
+   var store1=document.getElementById("h");
+   var store2=document.getElementById("k");
+   var submitter=document.getElementById("Storer");
+   var opener=document.getElementById("ToStore");
+   var Store=[];
+    var Finisher=[];
+add.addEventListener("click",OnSettingAlarm)
+remove.addEventListener("click",OnShowerIncrease)
+function OnShowerIncrease(){
+  min.value=0;
+  hour.value=0;
+  time.innerHTML="";
+  StopMusic();
+}
+function OnSettingAlarm(){
+    var a=min.value;
+    var b=hour.value;
+    setInterval(start,60000);
+    time.innerHTML=b+":"+a;
+}
+function start()
+{
+  var a=min.value;
+  var b=hour.value;
+  while(a>0)
+  {
+    a-=1;
+    if(a==0)
+    {
+      while(b>0)
+      {
+        b-=1;
+        a=60;
+      }
+    }
+  }
+  time.innerHTML=b+":"+a;
+  if(a==0 && b==0)
+  {
+    playMusic()
+  }
+}
+function playMusic(){
+   audio.play();
+}
+function StopMusic(){
+  audio.pause();
+}
+ 
+ 
+</script>

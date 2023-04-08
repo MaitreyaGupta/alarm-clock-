@@ -1,0 +1,138 @@
+
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  .Counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+  
+  .Shower {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    font-size: 3rem;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .Set.alarm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .Set.alarm p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .Set.alarm input[type="number"] {
+    width: 50px;
+    height: 30px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-right: 10px;
+  }
+  
+  .Set.alarm button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .Set.alarm button:hover {
+    background-color: #0062cc;
+  }
+  
+  .Set.alarm button:active {
+    transform: translateY(2px);
+  }
+  
+  .Set.alarm #remove-button {
+    background-color: #dc3545;
+    margin-left: 10px;
+  }
+  
+  .Set.alarm #remove-button:hover {
+    background-color: #c82333;
+  }
+  
+  .Set.alarm #remove-button:active {
+    transform: translateY(2px);
+  }
+  
+  #time-remaining {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  #previous-alarms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  #previous-alarms p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  #previous-alarms input[type="number"] {
+    width: 50px;
+    height: 30px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-right: 10px;
+  }
+  
+  #previous-alarms #Storer {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #previous-alarms #Storer:hover {
+    background-color: #218838;
+  }
+  
+  #previous-alarms #Storer:active {
+    transform: translateY(2px);
+  }
+  
+  #ToStore {
+    margin-top: 20px;
+  }
+  
+  #ToStore ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
